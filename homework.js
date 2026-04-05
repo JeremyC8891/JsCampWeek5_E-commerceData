@@ -57,6 +57,8 @@ const orders = [
  */
 function getProductById(products, productId) {
   // 請實作此函式
+  return products.find(product => product.id === productId) || null;
+
 }
 
 /**
@@ -67,6 +69,7 @@ function getProductById(products, productId) {
  */
 function getProductsByCategory(products, category) {
   // 請實作此函式
+  
 }
 
 /**
