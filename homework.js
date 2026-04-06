@@ -244,6 +244,10 @@ function updateCartItemQuantity(carts, cartId, newQuantity) {
  */
 function removeFromCart(carts, cartId) {
   // 請實作此函式
+  return carts.filter(function(item){
+    return item.id !== cartId;
+  }); 
+  
 }
 
 /**
