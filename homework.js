@@ -220,6 +220,20 @@ function addToCart(carts, product, quantity) {
  */
 function updateCartItemQuantity(carts, cartId, newQuantity) {
   // 請實作此函式
+  if (newQuantity <= 0) {
+    // 移除該商品
+    return carts.filter(function(item){
+      return item.id !== cartId;
+    });
+  } else {
+    // 更新數量
+    return carts.map(function(item){
+      if (item.id === cartId) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+  } 
 }
 
 /**
