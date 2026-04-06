@@ -148,6 +148,9 @@ function calculateCartTotal(carts) {
  */
 function calculateSavings(carts) {
   // 請實作此函式
+  const originalTotal = calculateCartOriginalTotal(carts);
+  const total = calculateCartTotal(carts);
+  return originalTotal - total; 
 }
 
 /**
