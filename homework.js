@@ -247,7 +247,7 @@ function removeFromCart(carts, cartId) {
   return carts.filter(function(item){
     return item.id !== cartId;
   }); 
-  
+
 }
 
 /**
@@ -256,6 +256,7 @@ function removeFromCart(carts, cartId) {
  */
 function clearCart() {
   // 請實作此函式
+  return [];
 }
 
 // ========================================
