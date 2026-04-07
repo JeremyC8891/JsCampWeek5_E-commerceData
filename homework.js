@@ -270,6 +270,12 @@ function clearCart() {
  */
 function calculateTotalRevenue(orders) {
   // 請實作此函式
+  return orders.reduce(function(total, item){
+    if (item.paid) {
+      return total + item.total;
+    }
+    return total;
+  }, 0);
 }
 
 /**
