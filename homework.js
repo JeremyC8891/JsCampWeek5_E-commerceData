@@ -333,6 +333,14 @@ function generateOrderReport(orders) {
  */
 function groupOrdersByPayment(orders) {
   // 請實作此函式
+  return orders.reduce(function(grouped, item){
+    const paymentMethod = item.user.payment;
+    if (!grouped[paymentMethod]) {
+      grouped[paymentMethod] = [];
+    }
+    grouped[paymentMethod].push(item);
+    return grouped;
+  }, {});
 }
 
 // ========================================
