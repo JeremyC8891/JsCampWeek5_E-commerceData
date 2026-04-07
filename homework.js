@@ -305,6 +305,21 @@ function filterOrdersByStatus(orders, isPaid) {
  */
 function generateOrderReport(orders) {
   // 請實作此函式
+  const totalOrders = orders.length;
+  const paidOrders = filterOrdersByStatus(orders, true).length;
+  const unpaidOrders = filterOrdersByStatus(orders, false).length;
+  const totalRevenue = calculateTotalRevenue(orders);
+  const averageOrderValue = totalOrders > 0 ? Math.round(orders.reduce(function(total, item){
+    return total + item.total;
+  }, 0) / totalOrders) : 0;
+
+  return {
+    totalOrders,
+    paidOrders,
+    unpaidOrders,
+    totalRevenue,
+    averageOrderValue
+  };  
 }
 
 /**
